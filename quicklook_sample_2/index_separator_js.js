@@ -1,3 +1,5 @@
+function detectBrowser();
+
 //gets the type of browser
 function detectBrowser() {
     if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
