@@ -1,5 +1,21 @@
 <html>
 <body>
-    <script src="index_separator_js.js"></script>
+    <!-- <script src="index_separator_js.js"></script> -->
+
+    <script>
+        var ba = ["Chrome", "Firefox", "Safari", "Opera", "MSIE", "Trident", "Edge"];
+        var b, ua = navigator.userAgent;
+        for (var i = 0; i < ba.length; i++) {
+            if (ua.indexOf(ba[i]) > -1) {
+                b = ba[i];
+                break;
+            }
+        }
+        if (b == "MSIE" || b == "Trident" || b == "Edge") {
+            b = "Internet Explorer";
+        }
+        alert("You are using " + b + " browser");
+    </script>
+
 </body>
 </html>
