@@ -33,30 +33,31 @@
 
         */
 
-        let browserName = "";
+        function getBrowserName() {
+            var name = "Unknown";
+            if (navigator.userAgent.indexOf("MSIE") != -1) {
+                name = "MSIE";
+            }
+            else if (navigator.userAgent.indexOf("Firefox") != -1) {
+                name = "Firefox";
+            }
+            else if (navigator.userAgent.indexOf("Opera") != -1) {
+                name = "Opera";
+            }
+            else if (navigator.userAgent.indexOf("Chrome") != -1) {
+                name = "Chrome";
+            }
+            else if (navigator.userAgent.indexOf("Safari") != -1) {
+                name = "Safari";
+            }
+            return name;
+        }
 
-        if(navigator.vendor.match(/google/i)) {
-                browserName = 'chrome/blink';
-            }
-        else if(navigator.vendor.match(/apple/i)) {
-                browserName = 'safari/webkit';
-            }
-        else if(navigator.userAgent.match(/firefox\//i)) {
-                browserName = 'firefox/gecko';
-            }
-        else if(navigator.userAgent.match(/edge\//i)) {
-                browserName = 'edge/edgehtml';
-            }
-        else if(navigator.userAgent.match(/trident\//i)) {
-                browserName = 'ie/trident';
-            }
-            else
-        {
-                browserName = navigator.userAgent + "\n" + navigator.vendor;
-            }
-            alert(browserName);
-
-
+        if (getBrowserName() == "Safari") {
+            alert("You are using Safari");
+        } else {
+            alert("You are surfing on " + getBrowserName(name));
+        }
 
 
     </script>
