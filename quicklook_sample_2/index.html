@@ -33,27 +33,28 @@
 
         */
 
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.indexOf('safari') != -1) {
-            if (ua.indexOf('chrome') > -1) {
-                alert("1") // Chrome
-            } else {
-                alert("2") // Safari
+        let browserName = "";
+
+        if(navigator.vendor.match(/google/i)) {
+                browserName = 'chrome/blink';
             }
-        }
-
-        /*
-        if (isSafari == true) {
-            alert("You are using " + "Safari" + " browser");
-            window.open("https://keep-vision-gmbh.github.io/3D_app_samples/quicklook_sample_2/apple/", "_self");
-        } else if (isChrome == true) {
-            alert("You are using " + "Chrome" + " browser");
-            window.open("https://keep-vision-gmbh.github.io/3D_app_samples/quicklook_sample_2/android/", "_self");
-        } else {
-            alert("Ihr Browser unterstuetzt leider keine direkte AR Anwendung. Bitte verwenden Sie die Browser Chrome oder Safari.");
-        }
-
-        */
+        else if(navigator.vendor.match(/apple/i)) {
+                browserName = 'safari/webkit';
+            }
+        else if(navigator.userAgent.match(/firefox\//i)) {
+                browserName = 'firefox/gecko';
+            }
+        else if(navigator.userAgent.match(/edge\//i)) {
+                browserName = 'edge/edgehtml';
+            }
+        else if(navigator.userAgent.match(/trident\//i)) {
+                browserName = 'ie/trident';
+            }
+            else
+        {
+                browserName = navigator.userAgent + "\n" + navigator.vendor;
+            }
+            alert(browserName);
 
 
 
