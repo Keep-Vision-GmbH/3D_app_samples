@@ -1,0 +1,37 @@
+<html>
+<body>
+    <!-- <script src="index_separator_js.js"></script> -->
+
+    <script>
+
+        
+        var ba = ["Chrome", "Firefox", "Safari", "Opera", "MSIE", "Trident", "Edge"];
+        var b, ua = navigator.userAgent;
+        for (var i = 0; i < ba.length; i++) {
+            if (ua.indexOf(ba[i]) > -1) {
+                b = ba[i];
+                break;
+            }
+        }
+        /*
+        if (b == "MSIE" || b == "Trident" || b == "Edge") {
+            b = "Internet Explorer";
+        }
+        alert("You are using " + b + " browser");
+        */
+
+        
+        if (b == "Safari") {
+          window.open("https://keep-vision-gmbh.github.io/3D_app_samples/quicklook_sample_2/apple/", "_self");
+        } else if (b == "Chrome") {
+          window.open("https://keep-vision-gmbh.github.io/3D_app_samples/quicklook_sample_2/android/", "_self");
+        } else {
+            alert("Ihr Browser unterstuetzt leider keine direkte AR Anwendung. Bitte verwenden Sie die Browser Chrome oder Safari.");
+        }
+
+
+
+    </script>
+
+</body>
+</html>
